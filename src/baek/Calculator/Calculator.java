@@ -23,6 +23,7 @@ public class Calculator {
 			System.out.println();
 			
 			if (symbol.equals("q")) {
+				System.out.printf("최종 값 = %d\n", result);
 				break;
 			}
 
