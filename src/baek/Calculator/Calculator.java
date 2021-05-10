@@ -21,20 +21,20 @@ public class Calculator {
 		System.out.println();
 
 		System.out.println("연산기호를 입력하세요.(+, -, *, /)");
-		System.out.print("CAL> ");
-		String cal = scan.next();
+		System.out.print("SYMBOL> ");
+		String symbol = scan.next();
 		System.out.println();
 
-		if (cal.equals("+")) {
+		if (symbol.equals("+")) {
 			System.out.printf("+ : %d + %d = %d\n", numOne, numTwo, numOne + numTwo);
 		}
-		else if (cal.equals("-")) {
+		else if (symbol.equals("-")) {
 			System.out.printf("- : %d - %d = %d\n", numOne, numTwo, numOne - numTwo);
 		}
-		else if (cal.equals("×")) {
+		else if (symbol.equals("×")) {
 			System.out.printf("× : %d × %d = %d\n", numOne, numTwo, numOne * numTwo);
 		}
-		else if (cal.equals("÷")) {
+		else if (symbol.equals("÷")) {
 			System.out.printf("÷ : %d ÷ %d = %d\n", numOne, numTwo, numOne / numTwo);
 		} else {
 			System.err.println("사칙연산 기호가 아닙니다!");
