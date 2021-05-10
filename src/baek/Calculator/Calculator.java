@@ -8,36 +8,56 @@ public class Calculator {
 
 		Scanner scan = new Scanner(System.in);
 
-		System.out.printf("두 수를 입력하세요.\n\n");
-
-		System.out.println("첫번째 입력 값을 입력하세요.");
-		System.out.print("FIRST NUM> ");
+		System.out.println("값을 입력하세요.");
+		System.out.print("NUM> ");
 		int numOne = scan.nextInt();
 		System.out.println();
 
-		System.out.println("두번째 입력 값을 입력하세요.");
-		System.out.print("SECOND NUM> ");
-		int numTwo = scan.nextInt();
-		System.out.println();
+		int result = numOne;
 
-		System.out.println("연산기호를 입력하세요.(+, -, *, /)");
-		System.out.print("SYMBOL> ");
-		String symbol = scan.next();
-		System.out.println();
+		while (true) {
 
-		if (symbol.equals("+")) {
-			System.out.printf("+ : %d + %d = %d\n", numOne, numTwo, numOne + numTwo);
+			System.out.println("연산기호를 입력하세요.(+, -, *, /, q=종료)");
+			System.out.print("SYMBOL> ");
+			String symbol = scan.next();
+			System.out.println();
+			
+			if (symbol.equals("q")) {
+				break;
+			}
+
+			System.out.println("값을 입력하세요.");
+			System.out.print("NUM> ");
+			int num = scan.nextInt();
+			System.out.println();
+
+			if (symbol.equals("+")) {
+				System.out.printf("%d + %d = ", result, num);
+				result = result + num;
+				System.out.println(result);
+				System.out.println();
+			} else if (symbol.equals("-")) {
+				System.out.printf("%d - %d = ", result, num);
+				result = result - num;
+				System.out.println(result);
+				System.out.println();
+			} else if (symbol.equals("*")) {
+				System.out.printf("%d × %d = ", result, num);
+				result = result * num;
+				System.out.println(result);
+				System.out.println();
+			} else if (symbol.equals("/")) {
+				System.out.printf("%d ÷ %d = ", result, num);
+				result = result / num;
+				System.out.println(result);
+				System.out.println();
+			} else {
+				System.err.println("사칙연산 기호가 아닙니다!");
+				System.out.println();
+			}
 		}
-		else if (symbol.equals("-")) {
-			System.out.printf("- : %d - %d = %d\n", numOne, numTwo, numOne - numTwo);
-		}
-		else if (symbol.equals("×")) {
-			System.out.printf("× : %d × %d = %d\n", numOne, numTwo, numOne * numTwo);
-		}
-		else if (symbol.equals("÷")) {
-			System.out.printf("÷ : %d ÷ %d = %d\n", numOne, numTwo, numOne / numTwo);
-		} else {
-			System.err.println("사칙연산 기호가 아닙니다!");
-		}
+		
+		System.out.println("종료");
+		scan.close();
 	}
 }
