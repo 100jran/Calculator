@@ -20,9 +20,9 @@ public class Command {
 				break;
 			}
 
-			int second = Input.getSecondValue(scanner);
+			int numTwo = Input.getSecondValue(scanner);
 
-			result = Calculate.getCalculater(result, symbol, second);
+			result = Calculate.getCalculater(result, symbol, numTwo);
 		}
 
 		System.out.println("종료");
